@@ -1,5 +1,11 @@
 {
     "name": "dailyapps/sync-manager",
+    "authors": [
+        {
+            "name": "Samoht70",
+            "email": "tpoirey70@gmail.com"
+        }
+    ],
     "require": {
         "laravel/framework": "^10|^11|^12",
         "php": "^8.4"
@@ -13,11 +19,24 @@
             "Dailyapps\\SyncManager\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "Samoht70",
-            "email": "tpoirey70@gmail.com"
+    "autoload-dev": {
+        "psr-4": {
+            "Dailyapps\\SyncManager\\Tests\\": "tests/"
         }
-    ],
-    "minimum-stability": "dev"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dailyapps\\SyncManager\\SyncManagerServiceProvider"
+            ],
+            "aliases": {
+                "SyncManager": "Dailyapps\\SyncManager\\Facades\\SyncManager"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
